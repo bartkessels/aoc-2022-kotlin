@@ -1,6 +1,6 @@
 package aoc
 
-class Second(
+class PartTwo(
     private val sanitizer: Sanitizer
 ) {
     fun getResult(): Int {

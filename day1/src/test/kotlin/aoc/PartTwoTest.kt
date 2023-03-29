@@ -3,13 +3,13 @@ package aoc
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class SecondTest {
+class PartTwoTest {
     @Test
     fun testGetResult() {
         // Arrange
-        val resource = SecondTest::class.java.getResource("/input.txt")
+        val resource = PartTwoTest::class.java.getResource("/input.txt")
         val sanitizer = Sanitizer(resource)
-        val sut = Second(sanitizer)
+        val sut = PartTwo(sanitizer)
         val expectedCalories = 45000
 
         // Act
@@ -24,7 +24,7 @@ class SecondTest {
         // Arrange
         val resource = null
         val sanitizer = Sanitizer(resource)
-        val sut = Second(sanitizer)
+        val sut = PartTwo(sanitizer)
         val expectedCalories = -1
 
         // Act
