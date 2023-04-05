@@ -10,13 +10,13 @@ class PartTwoTest {
         val resource = PartTwoTest::class.java.getResource("/input.txt")
         val sanitizer = Sanitizer(resource)
         val sut = PartTwo(sanitizer)
-        val expectedCalories = 45000
+        val expectedNumberOfPoints = 12
 
         // Act
         val result = sut.getResult()
 
         // Assert
-        assertEquals(expectedCalories, result)
+        assertEquals(expectedNumberOfPoints, result)
     }
 
     @Test
