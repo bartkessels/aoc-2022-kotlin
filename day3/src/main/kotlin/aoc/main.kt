@@ -9,6 +9,6 @@ fun main() {
     println("Part one: ${partOne.getResult()}")
 
     // Part two
-//    val partTwo = PartTwo(sanitizer)
-//    println("Part two: ${partTwo.getResult()}")
+    val partTwo = PartTwo(sanitizer)
+    println("Part two: ${partTwo.getResult()}")
 }
