@@ -15,6 +15,7 @@ class Sanitizer(
             ?.split("\n\n")
             ?.first()
             ?.split("\n")
+            ?.dropLast(1)
             ?.forEach {
                 var currentStackIndex = 0
 
@@ -23,13 +24,16 @@ class Sanitizer(
                         .removePrefix("[")
                         .removeSuffix("]")
                         .trim()
-                        .first()
+                        .firstOrNull()
 
                     if (stacks.elementAtOrNull(currentStackIndex) == null) {
                         stacks.add(currentStackIndex, Stack<Char>())
                     }
 
-                    stacks.elementAt(currentStackIndex).push(character)
+                    character?.let {
+                        stacks.elementAt(currentStackIndex).push(it)
+                    }
+
                     currentStackIndex++
                 }
             }
@@ -37,19 +41,25 @@ class Sanitizer(
         return stacks
     }
 
-    fun getInstructions(): List<Triple<Int, Int, Int>> {
+    fun getInstructions(): List<Triple<Int, Int, Int>>? =
         resource
             ?.readText()
             ?.split("\n\n")
             ?.last()
             ?.split("\n")
             ?.map {
-                it
+                val items = it
                     .replace("move ", "")
                     .replace("from ", "")
                     .replace("to ", "")
                     .split(" ")
                     .map{ it.toInt() }
+                    .take(3)
+
+                Triple(
+                    items.get(0),
+                    items.get(1),
+                    items.get(2)
+                )
             }
-    }
 }
