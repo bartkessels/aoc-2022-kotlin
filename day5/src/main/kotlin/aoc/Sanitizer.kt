@@ -16,6 +16,7 @@ class Sanitizer(
             ?.first()
             ?.split("\n")
             ?.dropLast(1)
+            ?.reversed()
             ?.forEach {
                 var currentStackIndex = 0
 

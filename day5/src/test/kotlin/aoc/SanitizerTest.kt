@@ -14,11 +14,11 @@ class SanitizerTest {
         val expectedStack2 = Stack<Char>()
         val expectedStack3 = Stack<Char>()
 
-        expectedStack1.push('N')
         expectedStack1.push('Z')
-        expectedStack2.push('D')
-        expectedStack2.push('C')
+        expectedStack1.push('N')
         expectedStack2.push('M')
+        expectedStack2.push('C')
+        expectedStack2.push('D')
         expectedStack3.push('P')
 
         val expectedStacks = listOf(
