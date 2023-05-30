@@ -3,27 +3,20 @@ package aoc
 class PartOne(
     private val sanitizer: Sanitizer
 ) {
-    fun getFirstMarkerPosition(): List<Int>? {
+    fun getFirstMarkerPosition(): Int {
         val chunkSize = 4
+        var currentIndex = 0
+        var firstMarkerPosition = -1
 
-        return sanitizer.getData()
-            ?.map { sequence ->
-                sequence.windowed(chunkSize, chunkSize) {
+        sanitizer.getDatastreamBuffers()?.windowed(chunkSize, 1, true) {
+            currentIndex++
 
-                }
-
-                var currentIndex = -1
-
-                sequence.chunked(chunkSize) {
-                    currentIndex += chunkSize
-
-                    if (it.toSet().size == chunkSize) {
-                        // Return the currentIndex
-                        currentIndex
-                    }
-                }
-
-                currentIndex
+            if (it.toSet().size == chunkSize) {
+                firstMarkerPosition = currentIndex + 1
+                return@windowed
             }
+        }
+
+        return firstMarkerPosition
     }
 }

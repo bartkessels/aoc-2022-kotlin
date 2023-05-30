@@ -5,13 +5,8 @@ import java.net.URL
 class Sanitizer(
     private val resource: URL?
 ) {
-    /**
-     * Read the data from the input
-     *
-     * @return The input text or null
-     */
-    fun getData(): List<String>? =
+    fun getDatastreamBuffers(): String? =
         resource
             ?.readText()
-            ?.split("\n")
+            ?.trim()
 }

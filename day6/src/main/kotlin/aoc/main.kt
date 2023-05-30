@@ -6,7 +6,7 @@ fun main() {
 
     // Part one
     val partOne = PartOne(sanitizer)
-    println("Part one: ${partOne.getFirstMarkerPosition()?.first()}")
+    println("Part one: ${partOne.getFirstMarkerPosition()}")
 //
 //    // Part two
 //    val partTwo = PartTwo(sanitizer)

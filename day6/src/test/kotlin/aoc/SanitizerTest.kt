@@ -12,7 +12,7 @@ class SanitizerTest {
         val sut = Sanitizer(input)
 
         // Act
-        val actualData = sut.getData()
+        val actualData = sut.getDatastreamBuffers()
 
         // Assert
         assertEquals(expectedData, actualData)
