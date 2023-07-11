@@ -8,7 +8,7 @@ class SanitizerTest {
     @Test
     fun testGetStacks() {
         // Arrange
-        val resource = SanitizerTest::class.java.getResource("/input.txt")
+        val resource = {}::class.java.getResource("/input.txt")
         val sut = Sanitizer(resource)
         val expectedStack1 = Stack<Char>()
         val expectedStack2 = Stack<Char>()
@@ -37,7 +37,7 @@ class SanitizerTest {
     @Test
     fun testGetInstructions() {
         // Arrange
-        val resource = SanitizerTest::class.java.getResource("/input.txt")
+        val resource = {}::class.java.getResource("/input.txt")
         val sut = Sanitizer(resource)
         val expectedInstructions = listOf(
             Triple(1, 2, 1),
