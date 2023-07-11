@@ -3,17 +3,17 @@ package aoc
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class PartOneTest {
+class PartTwoTest {
     @Test
     fun testGetResult() {
         // Arrange
-        val resource = PartOneTest::class.java.getResource("/input_part_one.txt")
+        val resource = PartOneTest::class.java.getResource("/input_part_two.txt")
         val sanitizer = Sanitizer(resource)
-        val sut = PartOne(sanitizer)
-        val expectedPosition = 5
+        val sut = PartTwo(sanitizer)
+        val expectedPosition = 19
 
         // Act
-        val result = sut.getFirstMarkerPosition()
+        val result = sut.getFirstMessagePosition()
 
         // Assert
         assertEquals(expectedPosition, result)
@@ -24,11 +24,11 @@ class PartOneTest {
         // Arrange
         val resource = null
         val sanitizer = Sanitizer(resource)
-        val sut = PartOne(sanitizer)
+        val sut = PartTwo(sanitizer)
         val expectedPosition = -1
 
         // Act
-        val result = sut.getFirstMarkerPosition()
+        val result = sut.getFirstMessagePosition()
 
         // Assert
         assertEquals(expectedPosition, result)
