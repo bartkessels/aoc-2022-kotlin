@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 class PartOneTest {
     @Test
-    fun testGetResult() {
+    fun testGetFirstMarkerPosition() {
         // Arrange
         val resource = PartOneTest::class.java.getResource("/input_part_one.txt")
         val sanitizer = Sanitizer(resource)

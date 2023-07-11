@@ -8,12 +8,11 @@ class PartOne(
         var currentIndex = -1
         var firstMarkerPosition = -1
 
-        sanitizer.getDatastreamBuffers()?.windowed(chunkSize, 1, true) {
+        sanitizer.getDatastreamBuffers()?.windowed(chunkSize, step = 1, partialWindows = true) {
             currentIndex++
 
             if (it.toSet().size == chunkSize && firstMarkerPosition <= 0) {
                 firstMarkerPosition = currentIndex + chunkSize
-                return@windowed
             }
         }
 

@@ -5,9 +5,9 @@ import kotlin.test.assertEquals
 
 class PartTwoTest {
     @Test
-    fun testGetResult() {
+    fun testGetFirstMarkerPosition() {
         // Arrange
-        val resource = PartOneTest::class.java.getResource("/input_part_two.txt")
+        val resource = PartTwoTest::class.java.getResource("/input_part_two.txt")
         val sanitizer = Sanitizer(resource)
         val sut = PartTwo(sanitizer)
         val expectedPosition = 19
