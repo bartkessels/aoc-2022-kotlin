@@ -10,7 +10,7 @@ class PartOneTest {
         val resource = PartOneTest::class.java.getResource("/input.txt")
         val sanitizer = Sanitizer(resource)
         val sut = PartOne(sanitizer)
-        val expectedPosition = 7
+        val expectedPosition = 5
 
         // Act
         val result = sut.getFirstMarkerPosition()
